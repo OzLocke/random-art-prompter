@@ -4,13 +4,13 @@
 <form action="/prompt" method="GET">
     <h2>What would you like to draw?</h2>
     <section class="options">
-        {% for option in options %}
-            <input type="radio" name="option" id="{{ option }}" value="{{ option }}">
-            <label for="{{ option }}">{{ option }}</label>
+        {% for subfield in form.radio %}
+            {{ subfield }}
+            {{ subfield.label }}
         {% endfor %}
     </section>
     <section class="submission">
-        <input type="submit" value="Prompt me!">
+        {{ form.submit }}
     </section>
 </form>
 {% endblock %}
