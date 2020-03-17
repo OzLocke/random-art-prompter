@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="/prompt" method="GET">
+<form action="/prompt" method="POST" novalidate>
     <h2>What would you like to draw?</h2>
     <section class="options">
         {% for subfield in form.radio %}

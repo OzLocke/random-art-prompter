@@ -1,8 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import RadioField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms import RadioField, SubmitField, validators
 
 class PromptForm(FlaskForm):
     choices = [('object', 'object'), ('scene', 'scene'), ('concept', 'concept')]
-    radio = RadioField(choices[0][0], choices=choices)
+    radio = RadioField('test', [validators.Required()], choices=choices, default='object')
     submit = SubmitField('Prompt me!')
